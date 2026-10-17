@@ -5,6 +5,7 @@ import {fileURLToPath} from 'node:url';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const skipped=new Set(['.git','node_modules','data','logs','runtime','vendor','coverage']);
 const allowed=/\.(?:mjs|js|jsx|css|html|json|md|yaml|yml|py|sh|ps1|vbs)$|(?:^|\/)(?:\.gitignore|\.gitattributes|\.env\.example|LICENSE|NOTICE)$/;
+const screenshotPath=/^docs\/screenshots\/[a-z0-9-]+\.jpg$/;
 const patterns=[
  ['private-key',/-----BEGIN (?:OPENSSH |RSA |EC |ENCRYPTED )?PRIVATE KEY-----/],
  ['api-credential',/\b(?:sk-(?:proj-)?[A-Za-z0-9_-]{24,}|gh[pousr]_[A-Za-z0-9]{25,}|github_pat_[A-Za-z0-9_]{30,}|AKIA[A-Z0-9]{16})\b/],
@@ -18,9 +19,13 @@ async function walk(dir){for(const entry of await readdir(dir,{withFileTypes:tru
  const path=join(dir,entry.name),name=relative(root,path).replaceAll('\\','/');
  if(entry.isSymbolicLink()){findings.push({path:name,category:'symbolic-link'});continue;}
  if(entry.isDirectory()){if(skipped.has(entry.name)||name==='public/studio-ui')continue;await walk(path);continue;}
- if(!allowed.test(name)){findings.push({path:name,category:'unexpected-file-type'});continue;}
+ if(!allowed.test(name)&&!screenshotPath.test(name)){findings.push({path:name,category:'unexpected-file-type'});continue;}
  const info=await stat(path);if(info.size>2*1024*1024){findings.push({path:name,category:'oversized-source'});continue;}
  const raw=await readFile(path);files++;bytes+=raw.length;
+ if(screenshotPath.test(name)){
+  if(raw.length<4||raw[0]!==0xff||raw[1]!==0xd8||raw[2]!==0xff||raw.at(-2)!==0xff||raw.at(-1)!==0xd9)findings.push({path:name,category:'invalid-jpeg-screenshot'});
+  continue;
+ }
  if(raw.includes(0)){findings.push({path:name,category:'binary-content'});continue;}
  // The checker contains the signatures it detects, rather than actual credentials.
  if(name==='tools/check-share.mjs')continue;
@@ -34,7 +39,8 @@ async function walk(dir){for(const entry of await readdir(dir,{withFileTypes:tru
   }
  }
  if(name.endsWith('.json'))try{JSON.parse(text);}catch{findings.push({path:name,category:'invalid-json'});}
+ if(name==='README.md')for(const match of text.matchAll(/!\[[^\]]*\]\((docs\/screenshots\/[^)\s]+)\)/g))try{if(!(await lstat(join(root,match[1]))).isFile())throw Error();}catch{findings.push({path:name,category:'missing-readme-screenshot',image:match[1]});}
 }}
 await walk(root);
-console.log(JSON.stringify({passed:findings.length===0,files,bytes,findings,note:'Heuristic source scan; review tracked files and upstream rights before publishing. Runtime and build directories are excluded.'},null,2));
+console.log(JSON.stringify({passed:findings.length===0,files,bytes,findings,note:'Heuristic source scan and JPEG signature checks. Screenshots require separate visual privacy review. Runtime and build directories are excluded.'},null,2));
 if(findings.length)process.exitCode=1;

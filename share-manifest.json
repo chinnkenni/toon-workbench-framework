@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "distribution": "toon-workbench-framework",
   "version": "0.1.0",
-  "contents": "Source-only learning framework; no original Git history, production data, credentials, external skills, models or media.",
+  "contents": "Learning framework source and documentation with real UI screenshots of fictional demo data; no original Git history, production data, credentials, external skills, models or production media.",
   "files": [
     {
       "path": ".env.example",
@@ -118,6 +118,36 @@
       "path": "docs/GITHUB-SHARING.md",
       "bytes": 2784,
       "sha256": "99bc726fa24b989deaa7758c5ab286063cbdc588a3a2976d254a6cb74f8f7ef7"
+    },
+    {
+      "path": "docs/screenshots/01-work-library.jpg",
+      "bytes": 41369,
+      "sha256": "db418efbe0edb99fa7e53a18d7b88c0c08abf4820cc6848ae1c8b6ec81347a2f"
+    },
+    {
+      "path": "docs/screenshots/02-script-storyboard.jpg",
+      "bytes": 46322,
+      "sha256": "2184615c7ed5d368f195268958d260ac53b3a07cfb75314f766ecb7005546d03"
+    },
+    {
+      "path": "docs/screenshots/03-storyboard-list.jpg",
+      "bytes": 43201,
+      "sha256": "286dee327507d2f108c028c2498c497df2c9bda54be74d7a5c35b7846e8fc687"
+    },
+    {
+      "path": "docs/screenshots/04-character-library.jpg",
+      "bytes": 48475,
+      "sha256": "22554f06a4589ec395fee630d3d3e88a29f13815ff69da51725aa3cefea6e439"
+    },
+    {
+      "path": "docs/screenshots/05-timeline-preview.jpg",
+      "bytes": 58308,
+      "sha256": "9e1016afb6e81e760bbd89807569b2aaba1315cfb59e3bc654700c87dbb95af1"
+    },
+    {
+      "path": "docs/screenshots/06-audio-tracks.jpg",
+      "bytes": 54040,
+      "sha256": "4f9f3c5f68b5540fc19361b7fd012f8d38ef0948f724bbc7bc30774a61187378"
     },
     {
       "path": "export-timeline.mjs",
@@ -546,8 +576,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3318,
-      "sha256": "41abca27dde675162fe005fda4cc0020f2ec9215169572dca65723bda4c26845"
+      "bytes": 7680,
+      "sha256": "24ba8aa85873abe5683c308b9c470b2e614b8a4513d8eaf56d2f25c4f540e7ee"
     },
     {
       "path": "reframe-snapshot.mjs",
@@ -711,8 +741,8 @@
     },
     {
       "path": "tools/check-share.mjs",
-      "bytes": 3079,
-      "sha256": "2735bc7a89114389d27e0a7cd065cf6acf9987f45a60bcd16afe89223428d312"
+      "bytes": 3655,
+      "sha256": "986f25b597079c92c28835bde05d64ace458cecf4e7d81b906fae8c968913c4e"
     },
     {
       "path": "tools/offline-test-guard.mjs",
