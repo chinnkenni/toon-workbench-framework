@@ -1,0 +1,62 @@
+.studio-modern .studio-toast {
+  position: fixed;
+  bottom: max(20px, env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  width: max-content;
+  max-width: min(600px, calc(100vw - 32px));
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--slate-12, #233442);
+  box-shadow: 0 8px 32px #102b3426;
+}
+
+.studio-modern .studio-toast > .rt-CalloutRoot {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--accent-6);
+  border-radius: inherit;
+  background: var(--color-panel-solid, #fff);
+  color: var(--slate-12, #233442);
+  box-shadow: none;
+}
+
+.studio-modern .studio-toast .rt-CalloutIcon {
+  flex: none;
+  margin-top: 2px;
+  color: var(--accent-11);
+}
+
+.studio-modern .studio-toast .rt-CalloutText {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  color: inherit;
+  font-size: 13px;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+.studio-modern .studio-toast .studio-toast-close {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  margin: -2px -4px -2px 0;
+  color: var(--slate-11);
+}
+
+.studio-modern .studio-toast .studio-toast-close:hover {
+  background: var(--slate-3);
+}
+
+@media (max-width: 600px) {
+  .studio-modern .studio-toast > .rt-CalloutRoot {
+    gap: 9px;
+    padding: 12px;
+  }
+}

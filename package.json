@@ -1,0 +1,33 @@
+{
+  "name": "toon-workbench-framework",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "toon-framework": "cli/toon.mjs"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env tools/start-learning.mjs",
+    "start:monitor": "node --env-file-if-exists=.env server.mjs",
+    "start:advanced": "node --env-file-if-exists=.env service-host.mjs",
+    "test": "node --import ./tools/offline-test-guard.mjs --test tests/*.test.mjs",
+    "build:studio": "vite build --config frontend/vite.config.mjs",
+    "cli": "node --env-file-if-exists=.env cli/toon.mjs",
+    "check:share": "node tools/check-share.mjs"
+  },
+  "dependencies": {
+    "@radix-ui/themes": "3.3.0",
+    "lucide-react": "1.57.0",
+    "radix-ui": "1.8.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "6.1.2",
+    "vite": "8.3.4"
+  },
+  "description": "A standalone learning framework for a local creative workbench",
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

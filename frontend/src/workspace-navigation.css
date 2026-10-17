@@ -1,0 +1,28 @@
+.studio-modern .modern-primary-nav{flex:0 0 auto;gap:5px}
+.modern-navigation-section{min-width:0}
+.studio-modern .modern-primary-nav .modern-nav-item{position:relative}
+.studio-modern .modern-primary-nav .modern-nav-item>.modern-nav-chevron{width:13px;height:13px;margin-left:auto;transition:transform .15s}
+.modern-nav-item[aria-expanded=true]>.modern-nav-chevron{transform:rotate(90deg)}
+.modern-secondary-nav{display:flex;flex-direction:column;gap:3px;padding:5px 0 4px 30px}
+.studio-modern .modern-primary-nav .modern-secondary-nav button{height:31px;min-height:31px;padding:5px 11px;font-size:12px;color:#93aebc;box-shadow:none}
+.studio-modern .modern-primary-nav .modern-secondary-nav button.active{color:#d5fff1;background:#1c4547;box-shadow:inset 2px 0 0 #31b494}
+.modern-secondary-nav button>span:first-child{width:4px;height:4px;flex:none;border-radius:50%;background:currentColor;opacity:.5}
+.studio-modern .modern-sidebar-footer .global-style-entry.active{background:#1e4b4b;color:#eafff8;box-shadow:inset 3px 0 0 #25b899}
+.modern-workspace[hidden]{display:none}
+.modern-content.is-global-styles{overflow:auto}
+.export-library-page{display:flex;flex-direction:column;gap:20px;min-width:0;padding:5px 2px 25px}
+.export-library-heading{display:flex;justify-content:space-between;align-items:start;gap:18px}
+.export-library-heading h2{font-size:24px;color:#294656;margin:0 0 8px}
+.export-library-heading p{font-size:12px;color:#8195a2;line-height:1.8}
+.export-library-player{display:flex;flex-direction:column;gap:12px;padding:16px;background:#fff;border:1px solid #e0e7ec;border-radius:9px;min-width:0}
+.export-library-player video{display:block;width:100%;height:auto;max-height:480px;object-fit:contain;background:#10232e;border-radius:6px;margin:0}
+.export-library-jobs{display:flex;flex-direction:column;gap:12px;min-width:0}
+.export-library-job.is-selected{box-shadow:0 0 0 1px #44a78c}
+.export-library-empty{padding:48px 22px;background:#fff;border:1px dashed #d6e2e9;border-radius:9px;color:#8298a6;text-align:center;font-size:13px;line-height:1.9}
+@media(max-width:760px){
+ .studio-modern .modern-primary-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;gap:5px}
+ .studio-modern .modern-primary-nav>.modern-navigation-section>.modern-nav-item{width:100%;padding:0 10px;gap:7px}
+ .modern-secondary-nav{padding:5px 0 0;gap:3px}
+ .studio-modern .modern-primary-nav .modern-secondary-nav button{width:100%;min-width:0;flex:none;padding:4px 10px;font-size:11px;justify-content:flex-start;gap:7px}
+ .export-library-heading h2{font-size:21px}.export-library-heading{gap:10px}.export-library-player{padding:11px}.export-library-heading>.rt-Button{flex-shrink:0}
+}

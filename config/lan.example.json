@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "enabled": false,
+  "bindAddress": "",
+  "port": 18995,
+  "managementPort": 18996,
+  "upstreamPort": 18990,
+  "monitorPort": 18987,
+  "certPath": "",
+  "keyPath": ""
+}

@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.0-framework",
+  "description": "学习框架阶段路由，未附带第三方技能、个人经验或生产记录。",
+  "stages": [
+    {
+      "id": "script",
+      "title": "剧本打磨",
+      "skillIds": [],
+      "references": [],
+      "localSkills": [],
+      "cliCommands": [
+        "toon guide script --work <W> --episode <E>",
+        "toon script get --work <W> --episode <E>",
+        "toon schema script save",
+        "toon schema script split",
+        "toon schema skills apply"
+      ]
+    },
+    {
+      "id": "storyboard",
+      "title": "分镜与动作连续",
+      "skillIds": [],
+      "references": [],
+      "localSkills": [],
+      "cliCommands": [
+        "toon guide storyboard --work <W> --episode <E>",
+        "toon shot list --work <W> --episode <E>",
+        "toon schema shot save",
+        "toon schema shot confirm",
+        "toon schema skills apply"
+      ]
+    },
+    {
+      "id": "camera",
+      "title": "摄影与运镜",
+      "skillIds": [],
+      "references": [],
+      "localSkills": [],
+      "cliCommands": [
+        "toon guide camera --work <W> --episode <E>",
+        "toon schema shot prompt",
+        "toon schema skills apply"
+      ]
+    },
+    {
+      "id": "characters",
+      "title": "人物性格与外形锁定",
+      "skillIds": [],
+      "references": [],
+      "localSkills": [],
+      "cliCommands": [
+        "toon guide characters --work <W> --episode <E>",
+        "toon role list --work <W>",
+        "toon schema role save",
+        "toon schema media upload",
+        "toon schema skills apply"
+      ]
+    },
+    {
+      "id": "scenes",
+      "title": "场景空间与道具",
+      "skillIds": [],
+      "references": [],
+      "localSkills": [],
+      "cliCommands": [
+        "toon guide scenes --work <W> --episode <E>",
+        "toon scene list --work <W>",
+        "toon schema scene save",
+        "toon schema media upload",
+        "toon schema skills apply"
+      ]
+    },
+    {
+      "id": "prompts",
+      "title": "提示词与首帧图片",
+      "skillIds": [],
+      "references": [],
+      "localSkills": [],
+      "cliCommands": [
+        "toon guide prompts --work <W> --episode <E>",
+        "toon execution-prompt get <shotUUID> --work <W>",
+        "toon schema shot prompt",
+        "toon schema shot bind",
+        "toon media list --work <W>",
+        "toon schema execution-prompt preview",
+        "toon schema execution-prompt compile",
+        "toon schema execution-prompt lock",
+        "toon schema skills apply"
+      ]
+    },
+    {
+      "id": "video",
+      "title": "H3视频生成与选版",
+      "skillIds": [],
+      "references": [],
+      "localSkills": [],
+      "cliCommands": [
+        "toon guide video --work <W> --episode <E>",
+        "toon execution-prompt get <shotUUID> --work <W>",
+        "toon models list",
+        "toon jobs list --work <W>",
+        "toon schema generate video",
+        "toon production list --work <W>",
+        "toon schema jobs cancel",
+        "toon asr capability",
+        "toon asr jobs --work <W>",
+        "toon schema asr transcribe",
+        "toon schema skills apply"
+      ]
+    },
+    {
+      "id": "voice",
+      "title": "角色声线与对白",
+      "skillIds": [],
+      "references": [],
+      "localSkills": [],
+      "cliCommands": [
+        "toon guide voice --work <W> --episode <E>",
+        "toon voice capability",
+        "toon voice jobs --work <W>",
+        "toon schema voice design",
+        "toon schema voice generate",
+        "toon asr capability",
+        "toon asr jobs --work <W>",
+        "toon schema asr transcribe",
+        "toon schema skills apply"
+      ]
+    },
+    {
+      "id": "music",
+      "title": "配乐与音效",
+      "skillIds": [],
+      "references": [],
+      "localSkills": [],
+      "cliCommands": [
+        "toon guide music --work <W> --episode <E>",
+        "toon music capability",
+        "toon music jobs --work <W>",
+        "toon schema music generate",
+        "toon music-library list --work <W>",
+        "toon schema skills apply"
+      ]
+    },
+    {
+      "id": "timeline",
+      "title": "时间轴与整片审阅",
+      "skillIds": [],
+      "references": [],
+      "localSkills": [],
+      "cliCommands": [
+        "toon guide timeline --work <W> --episode <E>",
+        "toon timeline get --work <W> --episode <E>",
+        "toon schema timeline save",
+        "toon export list --work <W>",
+        "toon asr capability",
+        "toon asr jobs --work <W>",
+        "toon schema asr transcribe",
+        "toon schema export create",
+        "toon schema skills apply"
+      ]
+    },
+    {
+      "id": "op-ed",
+      "title": "片头片尾库与逐集版本",
+      "skillIds": [],
+      "references": [],
+      "localSkills": [],
+      "cliCommands": [
+        "toon guide op-ed --work <W> --episode <E>",
+        "toon op-ed list --work <W>",
+        "toon schema op-ed create",
+        "toon schema op-ed version",
+        "toon schema op-ed apply",
+        "toon schema op-ed detach",
+        "toon timeline get --work <W> --episode <E>",
+        "toon schema skills apply"
+      ]
+    },
+    {
+      "id": "export",
+      "title": "审片导出与1080P超分",
+      "skillIds": [],
+      "references": [],
+      "localSkills": [],
+      "cliCommands": [
+        "toon guide export --work <W> --episode <E>",
+        "toon export capability --work <W>",
+        "toon schema export create",
+        "toon export list --work <W>",
+        "toon production list --work <W>",
+        "toon schema skills apply"
+      ]
+    },
+    {
+      "id": "publishing",
+      "title": "多平台发布与结果核对",
+      "skillIds": [],
+      "references": [],
+      "localSkills": [],
+      "cliCommands": [
+        "toon guide publishing --work <W> --episode <E>",
+        "toon publishing state --work <W>",
+        "toon publishing youtube-status",
+        "toon schema publishing prepare",
+        "toon schema publishing publish-api",
+        "toon schema skills apply"
+      ]
+    },
+    {
+      "id": "server",
+      "title": "服务器与模型运维",
+      "skillIds": [],
+      "references": [],
+      "localSkills": [],
+      "cliCommands": [
+        "toon guide server --work <W> --episode <E>",
+        "toon status",
+        "toon servers list",
+        "toon models list",
+        "toon jobs list",
+        "toon schema skills apply"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+/* Radix's dialog normally scrolls as a whole. This editor owns exactly one
+   vertical scroll surface per pane, with the heading and search kept outside. */
+/* Do not fix/reposition the document: removing this open-only lock must retain
+   the page's previous scroll offset when the dialog closes. */
+html:has(.skill-library-dialog[data-state="open"]),body:has(.skill-library-dialog[data-state="open"]){overflow:hidden!important}
+body:has(.skill-library-dialog[data-state="open"]) .modern-content,body:has(.skill-library-dialog[data-state="open"]) .sidebar-project-scroll{overflow:hidden!important}
+.rt-BaseDialogScroll:has(.skill-library-dialog){overflow:hidden}
+.rt-BaseDialogScrollPadding:has(.skill-library-dialog){padding:12px!important;min-width:0;min-height:0}
+.rt-DialogContent.skill-library-dialog{height:min(850px,calc(100dvh - 24px));max-height:calc(100dvh - 24px)!important;min-height:0;min-width:0;display:flex;flex-direction:column;overflow:hidden!important;padding:24px!important}
+.skill-library-dialog>.modern-dialog-heading,.skill-library-dialog>.skill-library-tools,.skill-library-dialog>.rt-CalloutRoot{flex:none}
+.skill-library-dialog .skill-library-columns{flex:1;min-height:0;min-width:0;overflow:hidden;grid-template-columns:270px minmax(0,1fr);grid-template-rows:minmax(0,1fr)}
+.skill-library-dialog .skill-navigation,.skill-library-dialog .skill-detail{display:block;min-height:0;min-width:0;max-height:none;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-gutter:stable}
+.skill-library-dialog .skill-navigation:focus-visible,.skill-library-dialog .skill-detail:focus-visible{outline:2px solid var(--accent-8);outline-offset:-2px}
+.skill-library-dialog .skill-detail{padding-right:6px;overflow-wrap:anywhere}
+.skill-library-dialog .skill-list-item strong,.skill-library-dialog .skill-list-item small{overflow-wrap:anywhere}
+.skill-library-dialog .skill-files{min-width:0}
+.skill-library-dialog .skill-files .rt-Button{height:auto;min-height:var(--base-button-height);max-width:100%;white-space:normal;overflow-wrap:anywhere;text-align:left}
+.skill-library-dialog .skill-source-document pre{max-height:none;overflow:visible;white-space:pre-wrap;overflow-wrap:anywhere}
+@media(max-width:760px){
+ .rt-DialogContent.skill-library-dialog{max-width:calc(100vw - 24px)!important;padding:16px!important}
+ .skill-library-dialog .skill-library-columns{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(64px,.3fr) minmax(0,1fr);gap:12px;padding-top:12px}
+ .skill-library-dialog .skill-navigation{max-height:none}
+ .skill-library-dialog .skill-detail{padding-right:2px}
+}
